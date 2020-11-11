@@ -1,0 +1,23 @@
+{
+  "name": "react-simply-translation",
+  "version": "0.0.1",
+  "description": "Simply Translation lib for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://andygi@github.com/andygi/react-simply-translation.git"
+  },
+  "keywords": [
+    "react",
+    "translation"
+  ],
+  "author": "Andy Greco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andygi/react-simply-translation/issues"
+  },
+  "homepage": "https://github.com/andygi/react-simply-translation#readme"
+}
