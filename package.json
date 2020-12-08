@@ -2,8 +2,9 @@
   "name": "react-simply-translation",
   "version": "0.0.1",
   "description": "Simply Translation lib for React",
-  "main": "index.js",
+  "main": "dist/index.min.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/andygi/react-simply-translation/issues"
   },
-  "homepage": "https://github.com/andygi/react-simply-translation#readme"
+  "homepage": "https://github.com/andygi/react-simply-translation#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "rollup": "^2.34.2",
+    "rollup-plugin-terser": "^7.0.2"
+  }
 }
