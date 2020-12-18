@@ -1,6 +1,12 @@
-export function simplyTranslate(key) {
-    const translation = JSON.parse(sessionStorage.getItem('translate'));
-    return translation[key];
+export function simplyTranslate(key,attr) {
+    const translationSet = JSON.parse(sessionStorage.getItem('translate'));
+    let translation = translationSet[key];
+    if (attr) {
+        attr.forEach((word, index) => {
+            translation = translation.replace(`{${index}}`, word);
+        });
+    }
+    return translation;
 }
 
 export default function loadTranslation(data) {

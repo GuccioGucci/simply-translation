@@ -17,10 +17,12 @@ Translation file is a JSON format, this is an example:
 
 
 File **en.json**
+*Please note the 'welcome' key with the attributes annotations*
 ```
 {
     "btnCancel": "cancel",
     "btnClose": "close",
+    "welcome": "Hello {0} {1}"
 }
 ```
 
@@ -57,14 +59,24 @@ loadTranslation({
 });
 ```
 
-### How to use it in the other components
+### How to use it in components
 
-First import the component and then call it with the corresponding key
+First import the component and then call it with the corresponding key and add attributes in an array in case.
+*Please check the translation JSON file as example*
 
 ```
 import { simplyTranslate } from 'react-simply-translation';
+```
 
-\\ return 'btnCancel' tranlsation
+#### Retrieve normal translation
+return 'btnCancel' translation
+```
 simplyTranslate('btnCancel');
 
+```
+
+#### Retrieve translation with attribute
+return 'welcome' with two attributes into an array
+```
+simplyTrasnlate('welcome', ['Laura', 'Brown']);
 ```
