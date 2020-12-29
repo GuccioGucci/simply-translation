@@ -2,12 +2,12 @@ import loadTranslation, { simplyTranslate } from './index.js';
 let languageGetter;
 
 beforeEach(() => {
-    window.sessionStorage.translate = {};
+    window.localStorage.translate = {};
     languageGetter = jest.spyOn(window.navigator, 'language', 'get');
 });
 
 afterEach(() => {
-    delete window.sessionStorage.translate;
+    delete window.localStorage.translate;
 });
 
 describe('Traslation', function () {
@@ -27,7 +27,7 @@ describe('Traslation', function () {
 
         const result = { btnCancel: 'cancel' };
         loadTranslation(input);
-        expect(window.sessionStorage.translate).toBe(JSON.stringify(result));
+        expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });
     it('should be show browser (IT) lang instead of default', () => {
         languageGetter.mockReturnValue('it-IT');
@@ -45,7 +45,7 @@ describe('Traslation', function () {
 
         const result = { btnCancel: 'annulla' };
         loadTranslation(input);
-        expect(window.sessionStorage.translate).toBe(JSON.stringify(result));
+        expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });
     it('should be show default lang in case browser lang is not present', () => {
         languageGetter.mockReturnValue('es-ES');
@@ -63,16 +63,16 @@ describe('Traslation', function () {
 
         const result = { btnCancel: 'cancel' };
         loadTranslation(input);
-        expect(window.sessionStorage.translate).toBe(JSON.stringify(result));
+        expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });
     it('should be the translation', () => {
         const input = { btnCancel: 'borrar' };
-        window.sessionStorage.translate = JSON.stringify(input);
+        window.localStorage.translate = JSON.stringify(input);
         expect(simplyTranslate('btnCancel')).toBe('borrar');
     });
     it('should be the translation with two attributes', () => {
         const input = { welcome: 'hello {0} {1}' };
-        window.sessionStorage.translate = JSON.stringify(input);
+        window.localStorage.translate = JSON.stringify(input);
         expect(simplyTranslate('welcome', ['Mr', 'Brown'])).toBe('hello Mr Brown');
     });
 });
