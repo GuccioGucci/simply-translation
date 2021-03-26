@@ -1,11 +1,6 @@
-name: Build
+name: Test
 
-on:
-  workflow_dispatch:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -14,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [10.21, 12, 14, 15]
 
     steps:
     - uses: actions/checkout@v2
@@ -23,8 +18,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Npm process
+    - name: Install
       run: npm install
-      
+
+    - name: Test
+      run: npm test
+
     - name: Build
       run: npm run build

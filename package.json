@@ -4,6 +4,7 @@
   "description": "Simply Translation lib for React",
   "main": "dist/index.min.js",
   "scripts": {
+    "pretest": "npm run lint",
     "build": "rollup -c",
     "test": "jest",
     "lint": "eslint src/*.js"
@@ -32,6 +33,9 @@
     "moduleDirectories": [
       "node_modules"
     ]
+  },
+  "engines": {
+    "node": ">=10.21"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

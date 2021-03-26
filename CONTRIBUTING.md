@@ -36,3 +36,21 @@ The [Node.js Code of Conduct][] applies to this WG.
 https://github.com/nodejs/node/blob/master/CODE_OF_CONDUCT.md
 [Node.js Moderation Policy]:
 https://github.com/nodejs/TSC/blob/master/Moderation-Policy.md
+
+# Developer Notes
+
+## Installation
+
+run `npm install`
+
+## Build
+
+run `npm run build`
+
+## Testing
+
+run `npm test`
+
+## Note
+
+Lint function is run on every commit and test every push
