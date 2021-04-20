@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://andygi@github.com/andygi/react-simply-translation.git"
+    "url": "https://github.com/GuccioGucci/react-simply-translation.git"
   },
   "keywords": [
     "react",
     "translation"
   ],
-  "author": "Andy Greco",
-  "license": "MIT",
+  "author": "Guccio Gucci",
+  "license": "LGPL-3.0-only",
   "bugs": {
-    "url": "https://github.com/andygi/react-simply-translation/issues"
+    "url": "https://github.com/GuccioGucci/react-simply-translation/issues"
   },
-  "homepage": "https://github.com/andygi/react-simply-translation#readme",
+  "homepage": "https://github.com/GuccioGucci/react-simply-translation#readme",
   "dependencies": {},
   "jest": {
     "name": "React Simply Translation",

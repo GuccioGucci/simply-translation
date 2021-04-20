@@ -80,3 +80,8 @@ return 'welcome' with two attributes into an array
 ```
 simplyTrasnlate('welcome', ['Laura', 'Brown']);
 ```
+## License
+
+Copyright 2021 Guccio Gucci.
+
+Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.gnu.org/licenses/lgpl.txt)
