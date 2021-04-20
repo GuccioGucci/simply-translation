@@ -1,85 +1,81 @@
 # react-simply-translation
 
-Very simple translation component focus only on translation words divided by JSON files with default language. 
-The component use browser language as first choose and default in case of the translation file is missed.
-The system use Unicode language naming, like `en-US` or `en-GB`.
-## How to install it
+Very simple translation component focused only on translation words divided by JSON files with default language.
+The component uses browser language as first choice and default in case of the translation file is missed.
+The system uses Unicode language naming, like `en-US` or `en-GB`.
 
-run
-```
-npm install react-simply-translation
-```
-## How to use
+## Setup
 
-### How set up JSON file
+```sh
+npm install @gucciogucci/react-simply-translation
+```
+
+### Create a JSON file
 
 Translation file is a JSON format, this is an example:
 
-
 File **en.json**
-*Please note the 'welcome' key with the attributes annotations*
-```
+
+```json
 {
-    "btnCancel": "cancel",
-    "btnClose": "close",
-    "welcome": "Hello {0} {1}"
+  "btnCancel": "cancel",
+  "btnClose": "close",
+  "welcome": "Hello {0} {1}"
 }
 ```
 
-### How to load and set it up
+*Please note the 'welcome' key with the attributes annotations*
+
+### Folder structure
 
 You need to use a JSON file per language in your project, the structure should be like this:
 
-```
+```sh
 src
-`--asset
-    `--i18n
-        |-- en.json
-        `-- it.json
+└── asset
+  └── i18n
+    ├── en.json
+    └── it.json
 ```
 
+## Usage
 
-In the main file, usually App.js, import the component and set it up like this:
+### Load translations
 
-```
-\\ Import component with set up and translation function
-import loadTranslation, { simplyTranslate } from 'react-simply-translation';
+In the main file, usually `App.js`, import the component and set it up like this:
 
-\\ import translation lib
+```js
+// import component with set up and translation function
+import loadTranslation, { simplyTranslate } from '@gucciogucci/react-simply-translation';
+
+// import translation lib
 import en from './asset/i18n/en.json';
 import it from './asset/i18n/it.json';
 
-\\ set up
+// set up
 loadTranslation({
-    default: 'en-US',
-    languages: {
-        'en-US': en,
-        'it-IT': it,
-    }
+  default: 'en-US',
+  languages: {
+    'en-US': en,
+    'it-IT': it,
+  }
 });
-```
+``` 
 
-### How to use it in components
+### Simply translate
 
 First import the component and then call it with the corresponding key and add attributes in an array in case.
+
 *Please check the translation JSON file as example*
 
-```
-import { simplyTranslate } from 'react-simply-translation';
+```js
+import { simplyTranslate } from '@gucciogucci/react-simply-translation';
+
+simplyTranslate('btnCancel'); //= cancel
+
+simplyTranslate('welcome', ['Laura', 'Brown']); //= Hello Laura Brown
 ```
 
-#### Retrieve normal translation
-return 'btnCancel' translation
-```
-simplyTranslate('btnCancel');
-
-```
-
-#### Retrieve translation with attribute
-return 'welcome' with two attributes into an array
-```
-simplyTrasnlate('welcome', ['Laura', 'Brown']);
-```
 ## License
 
 Copyright 2021 Gucci.
