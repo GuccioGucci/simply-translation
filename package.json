@@ -1,6 +1,6 @@
 {
   "name": "@gucciogucci/react-simply-translation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simply Translation lib for React",
   "main": "dist/index.min.js",
   "scripts": {
