@@ -14,7 +14,7 @@ npm version -h
 npm version [major | minor | patch]
 
 # Creates a new prerelease version by incrementing the major, minor, or patch number of the current version and adding a prerelease number.
-npm version [major | minor | patch] --preid beta
+npm version [premajor | preminor | prepatch] --preid beta
 
 # Push branch and tags
 git push origin main --follow-tags
