@@ -1,13 +1,13 @@
-# react-simply-translation
+# simply-translation
 
-Very simple translation component focused only on translation words divided by JSON files with default language.
+A very simple translation component focused only on translation words divided by JSON files with default language.
 The component uses browser language as first choice and default in case of the translation file is missed.
 The system uses Unicode language naming, like `en-US` or `en-GB`.
 
 ## Setup
 
 ```sh
-npm install @gucciogucci/react-simply-translation
+npm install @gucciogucci/simply-translation
 ```
 
 ### Create a JSON file
@@ -46,7 +46,7 @@ In the main file, usually `App.js`, import the component and set it up like this
 
 ```js
 // import component with set up and translation function
-import loadTranslation, { simplyTranslate } from '@gucciogucci/react-simply-translation';
+import loadTranslation, { simplyTranslate } from '@gucciogucci/simply-translation';
 
 // import translation lib
 import en from './asset/i18n/en.json';
@@ -69,7 +69,7 @@ First import the component and then call it with the corresponding key and add a
 *Please check the translation JSON file as example*
 
 ```js
-import { simplyTranslate } from '@gucciogucci/react-simply-translation';
+import { simplyTranslate } from '@gucciogucci/simply-translation';
 
 simplyTranslate('btnCancel'); //= cancel
 

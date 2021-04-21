@@ -1,1 +1,1 @@
-declare module 'react-simply-translation';
+declare module 'simply-translation';

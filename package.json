@@ -1,17 +1,18 @@
 {
-  "name": "@gucciogucci/react-simply-translation",
+  "name": "@gucciogucci/simply-translation",
   "version": "1.0.1",
-  "description": "Simply Translation lib for React",
+  "description": "Simply Translation library",
   "main": "dist/index.min.js",
   "scripts": {
     "pretest": "npm run lint",
     "build": "rollup -c",
     "test": "jest",
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GuccioGucci/react-simply-translation.git"
+    "url": "https://github.com/GuccioGucci/simply-translation.git"
   },
   "keywords": [
     "react",
@@ -20,12 +21,12 @@
   "author": "Gucci <npm@gucci.com>",
   "license": "LGPL-3.0-only",
   "bugs": {
-    "url": "https://github.com/GuccioGucci/react-simply-translation/issues"
+    "url": "https://github.com/GuccioGucci/simply-translation/issues"
   },
-  "homepage": "https://github.com/GuccioGucci/react-simply-translation#readme",
+  "homepage": "https://github.com/GuccioGucci/simply-translation#readme",
   "dependencies": {},
   "jest": {
-    "name": "React Simply Translation",
+    "name": "Simply Translation",
     "roots": [
       "src/"
     ],
