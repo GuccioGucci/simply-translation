@@ -65,6 +65,32 @@ describe('Traslation', function () {
         loadTranslation(input);
         expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });
+    it('should be show lang by url case #1', () => {
+        global.window = Object.create(window);
+        Object.defineProperty(window, 'location', {
+            value: {
+                href: 'https://www.domain.com/uk/it/',
+                origin: 'https://www.domain.com',
+                pathname: '/uk/it/'
+            }
+        });
+        const input = {
+            default: 'en',
+            source: 'url_pathname_slot2',
+            languages: {
+                'en': {
+                    btnCancel: 'cancel',
+                },
+                'it': {
+                    btnCancel: 'annulla',
+                },
+            },
+        };
+
+        const result = { btnCancel: 'annulla' };
+        loadTranslation(input);
+        expect(window.localStorage.translate).toBe(JSON.stringify(result));
+    });
     it('should be the translation', () => {
         const input = { btnCancel: 'borrar' };
         window.localStorage.translate = JSON.stringify(input);
