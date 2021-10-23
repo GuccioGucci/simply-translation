@@ -65,7 +65,7 @@ describe('Traslation', function () {
         loadTranslation(input);
         expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });
-    it('should be show lang by url case #1', () => {
+    it('should be show lang by url with Lang in second slot', () => {
         global.window = Object.create(window);
         Object.defineProperty(window, 'location', {
             value: {
@@ -88,6 +88,28 @@ describe('Traslation', function () {
         };
 
         const result = { btnCancel: 'annulla' };
+        loadTranslation(input);
+        expect(window.localStorage.translate).toBe(JSON.stringify(result));
+    });
+    it('should be show lang by html lang attribute', () => {
+        document.getElementsByTagName('html')[0].setAttribute('lang', 'es');
+        const input = {
+            default: 'en',
+            source: 'html',
+            languages: {
+                'en': {
+                    btnCancel: 'cancel',
+                },
+                'es': {
+                    btnCancel: 'anular',
+                },
+                'it': {
+                    btnCancel: 'annulla',
+                },
+            },
+        };
+
+        const result = { btnCancel: 'anular' };
         loadTranslation(input);
         expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });

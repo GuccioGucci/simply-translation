@@ -15,6 +15,8 @@ export default function loadTranslation(data) {
     if (data.source !== undefined && data.source === 'url_pathname_slot2') {
         const [, , language] = window.location.pathname.split('/');
         lang = language;
+    } else if (data.source !== undefined && data.source === 'html') {
+        lang = document.documentElement.lang;
     } else {
         lang = navigator.language;
     }
