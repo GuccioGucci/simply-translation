@@ -92,7 +92,7 @@ describe('Traslation', function () {
         expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });
     it('should be show lang by html lang attribute', () => {
-        document.getElementsByTagName('html')[0].setAttribute('lang', 'es');
+        document.getElementsByTagName('html')[0].setAttribute('lang', 'zh_HK');
         const input = {
             default: 'en',
             source: 'html',
@@ -100,8 +100,8 @@ describe('Traslation', function () {
                 'en': {
                     btnCancel: 'cancel',
                 },
-                'es': {
-                    btnCancel: 'anular',
+                'zh_hk': {
+                    btnCancel: '取消',
                 },
                 'it': {
                     btnCancel: 'annulla',
@@ -109,7 +109,7 @@ describe('Traslation', function () {
             },
         };
 
-        const result = { btnCancel: 'anular' };
+        const result = { btnCancel: '取消' };
         loadTranslation(input);
         expect(window.localStorage.translate).toBe(JSON.stringify(result));
     });
