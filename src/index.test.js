@@ -2,7 +2,9 @@ import loadTranslation, { simplyTranslate } from './index.js';
 let languageGetter;
 
 beforeEach(() => {
+    window.ggsp_storage = undefined;
     window.localStorage.translate = {};
+    window.localStorage.translate_newone = {};
     languageGetter = jest.spyOn(window.navigator, 'language', 'get');
 });
 
@@ -107,6 +109,52 @@ describe('Traslation', function () {
                     btnCancel: 'annulla',
                 },
             },
+        };
+
+        const result = { btnCancel: '取消' };
+        loadTranslation(input);
+        expect(window.localStorage.translate).toBe(JSON.stringify(result));
+    });
+    it('should be show with different storagename', () => {
+        document.getElementsByTagName('html')[0].setAttribute('lang', 'zh_HK');
+        const input = {
+            default: 'en',
+            source: 'html',
+            languages: {
+                'en': {
+                    btnCancel: 'cancel',
+                },
+                'zh_hk': {
+                    btnCancel: '取消',
+                },
+                'it': {
+                    btnCancel: 'annulla',
+                },
+            },
+            storageName: 'newone'
+        };
+
+        const result = { btnCancel: '取消' };
+        loadTranslation(input);
+        expect(window.localStorage.translate_newone).toBe(JSON.stringify(result));
+    });
+    it('should be show with default storagename', () => {
+        document.getElementsByTagName('html')[0].setAttribute('lang', 'zh_HK');
+        const input = {
+            default: 'en',
+            source: 'html',
+            languages: {
+                'en': {
+                    btnCancel: 'cancel',
+                },
+                'zh_hk': {
+                    btnCancel: '取消',
+                },
+                'it': {
+                    btnCancel: 'annulla',
+                },
+            },
+            storageName: ''
         };
 
         const result = { btnCancel: '取消' };

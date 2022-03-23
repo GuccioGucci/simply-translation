@@ -71,8 +71,26 @@ By default, _SimplyTranslation_ use browser language as language selector, you c
 | default | yes | {string} | en | set up default JSON file |
 | source | no | {string} | null \| url_pathname_slot2 \| html | - __null or blank__: use browser language<br>- __url_pathname_slot2__: use URL second slot (e.g.: https://www.domain.com/uk/it/ lang will be _it_)<br>- __html__: use HTML lang attribute `<html lang="en" ... >` |
 | languages | yes | {object} | {'en-US': en, 'it-IT': it, ...} | mapping languages files |
+| storageName | no | {string} |  | In order to avoid potential conflicts in case you have more than one app with this lib in the same page, you can add an extra name parameter to the storage data |
 
-Example:
+### Examples
+
+#### Basic configuration
+
+It will use the _Browser Language_ as selector, `en-US` as default language and `it-IT` as extra language:
+```js
+loadTranslation({
+  default: 'en-US',
+  languages: {
+    'en-US': en,
+    'it-IT': it,
+  }
+});
+```
+
+#### With different Language Selector sourse
+
+It will use URL as Language Selector `https://www.domain.com/uk/en/`, and `zh_hk`, and `zh` as extras languages:
 
 ```js
 loadTranslation({
@@ -83,6 +101,20 @@ loadTranslation({
     'zh_hk': zh_hk,
     'zh': zh,
   }
+});
+```
+
+#### With different data storage name
+
+The translation will be storage in a different object:
+
+```js
+loadTranslation({
+  default: 'en',
+  languages: {
+    'en': en
+  },
+  storageName: 'newName'
 });
 ```
 
