@@ -1,6 +1,6 @@
 {
   "name": "@gucciogucci/simply-translation",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Simply Translation library",
   "main": "dist/index.min.js",
   "scripts": {
